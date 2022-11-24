@@ -9,13 +9,24 @@ import java.util.Date;
  * @Version 1.0
  */
 public class Order {
+    private Integer id;         //主键，不可见
     private Integer status;         //0代表过往订单，1代表现在进行订单
     private Integer orderid;            //order的编号，唯一，作为主码
     private Date ordertime;            //代表订单创定时间
     private Integer duration;           //订单持续时长
     private Integer deviceid;           //设备的id
+    private User user;          //订单主人
+
 
     public Order() {
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Integer getStatus() {

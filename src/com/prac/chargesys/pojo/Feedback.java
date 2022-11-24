@@ -7,19 +7,28 @@ package com.prac.chargesys.pojo;
  * @Version 1.0
  */
 public class Feedback {
-    private Integer userid;         //反馈者的id
+    private Integer id;         //订单id，主键，不可见
+    private User user;         //反馈者
     private String content;         //反馈的内容
     private String telnumber;           //反馈者的联系方式
 
     public Feedback() {
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUserid(User user) {
+        this.user = user;
     }
 
     public String getContent() {

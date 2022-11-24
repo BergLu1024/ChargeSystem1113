@@ -24,20 +24,6 @@ public interface UserDAO {
     User getUser(String username, String password);
 
     /**
-     * 根据用户唯一id，获取该用户的订单列表
-     * @param id
-     * @return 成功则返回List，失败返回null
-     */
-    List<Order> getOrderList(Integer id);
-
-    /**
-     * 根据用户唯一id，获取该用户反馈信息列表。
-     * @param id
-     * @return 成功则返回List，失败返回null
-     */
-    List<Feedback> getFeedbackList(Integer id);
-
-    /**
      * 根据用户id获取用户信息
      * @param id
      * @return 成功返回User对象，失败返回null
