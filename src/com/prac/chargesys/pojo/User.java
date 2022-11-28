@@ -1,5 +1,7 @@
 package com.prac.chargesys.pojo;
 
+import java.util.Arrays;
+
 /**
  * @ClassName User
  * @Description
@@ -14,6 +16,11 @@ public class User {
     private Feedback[] feedbackList;            //用户反馈信息列表
 
     public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public Integer getId() {

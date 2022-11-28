@@ -12,11 +12,21 @@ import com.prac.chargesys.pojo.User;
 public class UserDAOImpl extends BaseDao implements UserDAO {
     @Override
     public User getUser(String username, String password) {
-         return null;
+        String sql = "select * from t_user where username = ? and password = ?";
+        User user = queryForOne(User.class, sql, username, password);
+        return user;
     }
 
     @Override
     public User getUserById(Integer id) {
-        return null;
+        String sql = "select * from t_user where id = ?";
+        User user = queryForOne(User.class, sql, id);
+        return user;
+    }
+
+    @Override
+    public void addUser(User user) {
+        String sql = "insert into t_user(username, password) values(?, ?)";
+        int update = update(sql, user.getUserName(), user.getPassword());
     }
 }

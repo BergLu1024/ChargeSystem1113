@@ -29,4 +29,10 @@ public interface UserDAO {
      * @return 成功返回User对象，失败返回null
      */
     User getUserById(Integer id);
+
+    /**
+     * 添加用户
+     * @param user
+     */
+    void addUser(User user);
 }

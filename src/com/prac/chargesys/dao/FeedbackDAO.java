@@ -15,10 +15,10 @@ public interface FeedbackDAO {
 
     /**
      * 获取用户反馈信息列表。
-     * @param user
+     * @param author
      * @return 成功则返回List，失败返回null
      */
-    List<Feedback> getFeedbackList(User user);
+    List<Feedback> getFeedbackList(Integer author);
 
     /**
      * 根据反馈信息id，获取反馈信息具体内容

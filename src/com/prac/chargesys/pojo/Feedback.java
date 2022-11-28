@@ -8,7 +8,7 @@ package com.prac.chargesys.pojo;
  */
 public class Feedback {
     private Integer id;         //订单id，主键，不可见
-    private User user;         //反馈者
+    private Integer author;         //反馈者
     private String content;         //反馈的内容
     private String telnumber;           //反馈者的联系方式
 
@@ -23,12 +23,12 @@ public class Feedback {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Integer getAuthor() {
+        return author;
     }
 
-    public void setUserid(User user) {
-        this.user = user;
+    public void setAuthorId(Integer author) {
+        this.author = author;
     }
 
     public String getContent() {
@@ -45,5 +45,15 @@ public class Feedback {
 
     public void setTelnumber(String telnumber) {
         this.telnumber = telnumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "id=" + id +
+                ", author=" + author +
+                ", content='" + content + '\'' +
+                ", telnumber='" + telnumber + '\'' +
+                '}';
     }
 }
