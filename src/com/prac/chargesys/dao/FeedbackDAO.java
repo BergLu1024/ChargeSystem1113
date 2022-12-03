@@ -32,4 +32,10 @@ public interface FeedbackDAO {
      * @param feedback
      */
     void addFeedback(Feedback feedback);
+
+    /**
+     * 根据id删除反馈信息
+     * @param id
+     */
+    void deleteFeedback(Integer id);
 }

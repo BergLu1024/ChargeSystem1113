@@ -32,4 +32,10 @@ public class FeedbackDAOImpl extends BaseDao implements FeedbackDAO {
         String sql = "insert into t_feedback(content, telnumber, author) values(?, ?, ?)";
         update(sql, feedback.getContent(), feedback.getTelnumber(), feedback.getAuthor());
     }
+
+    @Override
+    public void deleteFeedback(Integer id) {
+        String sql = "delete from t_feedback where id = ?";
+        update(sql, id);
+    }
 }
