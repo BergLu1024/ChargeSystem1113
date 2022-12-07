@@ -14,16 +14,16 @@ import java.util.List;
  */
 public class OrderDAOImpl extends BaseDao implements OrderDAO {
     @Override
-    public List<Order> getOrderList(User user) {
+    public List<Order> getOrderList(Integer author) {
         String sql = "select * from t_order where author = ?";
-        List<Order> orderList = queryForList(Order.class, sql, user.getId());
+        List<Order> orderList = queryForList(Order.class, sql, author);
         return orderList;
     }
 
     @Override
     public void addOrder(Order order) {
-        String sql = "insert into t_order(status, ordertime, deviceid, author) values (?, ?, ?, ?)";
-        update(sql, order.getStatus(), order.getOrdertime(), order.getDeviceid(), order.getUser());
+        String sql = "insert into t_order(status, ordertime, deviceid, author, time) values (?, ?, ?, ?, ?)";
+        update(sql, order.getStatus(), order.getOrdertime(), order.getDeviceid(), order.getAuthor(), order.getTime());
     }
 
     @Override

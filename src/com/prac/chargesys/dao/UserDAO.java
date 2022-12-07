@@ -35,4 +35,11 @@ public interface UserDAO {
      * @param user
      */
     void addUser(User user);
+
+    /**
+     * 通过用户名查找用户
+     * @param username
+     * @return
+     */
+    User getUser(String username);
 }

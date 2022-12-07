@@ -27,6 +27,13 @@ public class UserDAOImpl extends BaseDao implements UserDAO {
     @Override
     public void addUser(User user) {
         String sql = "insert into t_user(username, password) values(?, ?)";
-        int update = update(sql, user.getUserName(), user.getPassword());
+        update(sql, user.getUserName(), user.getPassword());
+    }
+
+    @Override
+    public User getUser(String username) {
+        String sql = "select * from t_user where username = ?";
+        User user = queryForOne(User.class, sql, username);
+        return user;
     }
 }

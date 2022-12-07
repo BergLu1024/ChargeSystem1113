@@ -18,7 +18,7 @@ public interface OrderDAO {
      * @param user
      * @return 成功则返回List，失败返回null
      */
-    List<Order> getOrderList(User user);
+    List<Order> getOrderList(Integer author);
 
     /**
      * 添加订单

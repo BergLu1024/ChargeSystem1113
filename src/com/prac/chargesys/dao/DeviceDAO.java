@@ -2,6 +2,8 @@ package com.prac.chargesys.dao;
 
 import com.prac.chargesys.pojo.Device;
 
+import java.util.List;
+
 /**
  * @interfaceName DeviceDAO
  * @Description
@@ -15,6 +17,16 @@ public interface DeviceDAO {
      * @param id
      * @return
      */
-    Device getDevice(Integer id);
+    Device getDevice(int id);
 
+    /**
+     * 设置设备的状态
+     * @param status
+     */
+    void setDeviceStatus(Integer status, Integer id);
+
+    /**
+     * 获取所有的设备信息
+     */
+    List<Device> getDeviceList();
 }

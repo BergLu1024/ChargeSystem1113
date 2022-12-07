@@ -9,45 +9,39 @@ import java.sql.Timestamp;
  * @Version 1.0
  */
 public class Order {
-    private Integer id;         //主键，不可见
-    private Integer status;         //0代表过往订单，1代表现在进行订单
+    private int id;         //主键，不可见
+    private int status;         //0代表过往订单，1代表现在进行订单
     private Timestamp ordertime;            //代表订单创定时间
-    private String duration;           //订单持续时长
-    private Integer deviceid;           //设备的id
-    private Integer author;          //订单主人
+    private int deviceid;           //设备的id
+    private int author;          //订单主人
+    private int time;
 
 
     public Order() {
     }
 
-    public Order(Integer status, Timestamp ordertime, Integer deviceid, Integer author) {
+    public Order(int status, Timestamp ordertime, int deviceid, int author, int time) {
+
         this.status = status;
         this.ordertime = ordertime;
         this.deviceid = deviceid;
         this.author = author;
+        this.time = time;
     }
 
-    public Integer getUser() {
-        return author;
-    }
-
-    public void setUser(Integer author) {
-        this.author = author;
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -59,19 +53,27 @@ public class Order {
         this.ordertime = ordertime;
     }
 
-    public String getDuration() {
-        return duration;
+    public int getAuthor() {
+        return author;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setAuthor(int author) {
+        this.author = author;
     }
 
-    public Integer getDeviceid() {
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public int getDeviceid() {
         return deviceid;
     }
 
-    public void setDeviceid(Integer deviceid) {
+    public void setDeviceid(int deviceid) {
         this.deviceid = deviceid;
     }
 
@@ -81,7 +83,7 @@ public class Order {
                 "id=" + id +
                 ", status=" + status +
                 ", ordertime=" + ordertime +
-                ", duration='" + duration + '\'' +
+                ", time='" + time + '\'' +
                 ", deviceid=" + deviceid +
                 '}';
     }

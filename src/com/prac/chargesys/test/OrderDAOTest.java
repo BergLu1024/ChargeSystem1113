@@ -25,7 +25,7 @@ public class OrderDAOTest {
     @Test
     public void test1(){
         User user = userDAO.getUserById(1);
-        List<Order> orderList = orderDAO.getOrderList(user);
+        List<Order> orderList = orderDAO.getOrderList(user.getId());
         for(Order order : orderList){
             System.out.println(order);
         }
@@ -33,7 +33,6 @@ public class OrderDAOTest {
 
     @Test
     public void test2(){
-        orderDAO.addOrder(new Order(0, new Timestamp(new java.util.Date().getTime()), 5, 1));
     }
 
     @Test

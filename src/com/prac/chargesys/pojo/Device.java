@@ -7,25 +7,34 @@ package com.prac.chargesys.pojo;
  * @Version 1.0
  */
 public class Device {
-    private Integer id;         //设备id,唯一,作为主码
-    private Integer status;         //设备状态，0为未使用，1为使用中
+    private int id;         //设备id,唯一,作为主码
+    private int status;         //设备状态，0为未使用，1为使用中
+    private String location;        //设备位置
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public Device() {
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

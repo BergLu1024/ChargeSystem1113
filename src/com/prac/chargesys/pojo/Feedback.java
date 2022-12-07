@@ -15,6 +15,12 @@ public class Feedback {
     public Feedback() {
     }
 
+    public Feedback(Integer author, String content, String telnumber) {
+        this.author = author;
+        this.content = content;
+        this.telnumber = telnumber;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @Version 1.0
  */
 public class User {
-    private Integer id;         //用户id,自增，唯一
+    private int id;         //用户id,自增，唯一
     private String username;          //用户名，唯一
     private String password;            //密码
     private Order[] orderList;          //用户订单列表
@@ -23,11 +23,11 @@ public class User {
         this.password = password;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
