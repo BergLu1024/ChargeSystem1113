@@ -39,7 +39,7 @@ public class DeviceServlet extends HttpServlet {
         Writer out = resp.getWriter();
         Map map = new HashMap();
         String json = "";
-        if (req.getParameter("ope") == "scan"){
+        if ("scan".equals(req.getParameter("ope"))){
             String id = req.getParameter("id");
             Device device = deviceDAO.getDevice(Integer.valueOf(id));
 

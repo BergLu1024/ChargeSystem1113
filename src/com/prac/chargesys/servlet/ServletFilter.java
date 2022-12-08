@@ -16,6 +16,7 @@ public class ServletFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
+        System.out.println(";;;;;;");
         ((HttpServletResponse)servletResponse).setContentType("text/html;charset=utf-8");
 
         /*设置响应头允许ajax跨域访问*/
@@ -24,5 +25,6 @@ public class ServletFilter implements Filter {
         /* 星号表示所有的异域请求都可以接受， */
         ((HttpServletResponse)servletResponse).setHeader("Access-Control-Allow-Methods", "GET,POST");
 
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 }

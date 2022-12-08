@@ -37,13 +37,16 @@ public class UserServlet extends HttpServlet {
             String password = req.getParameter("password");
             System.out.println(username + ", " + password);
             User user = userDAO.getUser(username, password);
+            User user1 = userDAO.getUser(username);
 
             Map map = new HashMap();
             if (user != null) {
                 map.put("signal", "ok");
                 map.put("id", user.getId());
                 map.put("username", user.getUserName());
-            } else {
+            } else if (user1 != null){
+                map.put("signal", "wrong");
+            } else{
                 map.put("signal", "no");
             }
             String json = new Gson().toJson(map);
